@@ -25,13 +25,13 @@ jobs:
       - name: npm install
         if: env.ZM_zhimabody
         run: |
-          cd ~/JavaScript
+          cd ~/ziye
           git checkout ZIYE
           npm install
       - name: '运行 【芝麻】'
         if: env.ZM_zhimabody
         run: |
-          cd ~/JavaScript
+          cd ~/ziye
           node Task/zhima.js
         env:
           
