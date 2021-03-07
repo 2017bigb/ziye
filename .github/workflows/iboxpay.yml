@@ -11,9 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        XP_refreshTOKEN: ${{ secrets.XP_refreshTOKEN }}
-        		
-        
+        XP_refreshTOKEN: ${{ secrets.XP_refreshTOKEN }}      		
+      
     steps:
       - name: Checkout
         run: |
