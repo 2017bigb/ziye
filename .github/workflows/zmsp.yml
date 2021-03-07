@@ -31,7 +31,7 @@ jobs:
         if: env.ZM_zhimabody
         run: |
           cd ~/ziye
-          node Task/zmsp.js
+          node Task/zhima.js
         env:
           
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
