@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        bububaoTOKEN: ${{ secrets.bububaoTOKEN }}	
+        BBB_bububaoTOKEN: ${{ secrets.BBB_bububaoTOKEN }}	
         
     steps:
       - name: Checkout
@@ -22,13 +22,13 @@ jobs:
         with:
           node-version: 12.x
       - name: npm install
-        if: env.ZM_zhimabody
+        if: env.BBB_bububaoTOKEN
         run: |
           cd ~/ziye
           git checkout ZIYE
           npm install
       - name: '运行 【步步宝】'
-        if: env.bububaoTOKEN
+        if: env.BBB_bububaoTOKEN
         run: |
           cd ~/ziye
           node Task/bububao.js
