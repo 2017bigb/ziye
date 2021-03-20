@@ -32,7 +32,7 @@ jobs:
         if: env.fqkkhd
         run: |
           cd ~/ziye
-          node Task/fqkk.js
+          node fqkk.js
         env:
           
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
