@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/2017bigb/feizao.git ~/feizao
+          git clone https://github.com/2017bigb/ziye.git ~/ziye
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -25,13 +25,13 @@ jobs:
       - name: npm install
         if: env.fqkkhd
         run: |
-          cd ~/feizao
+          cd ~/ziye
           git checkout feizao
           npm install
       - name: '运行 【番茄看看】'
         if: env.fqkkhd
         run: |
-          cd ~/feizao
+          cd ~/ziye
           node Task/fqkk.js
         env:
           
