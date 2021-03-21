@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        wkzzhd: ${{ secrets.WKZZHD }}
-        wkzzurl: ${{ secrets.WKZZURL }}		
+        WKZZHD: ${{ secrets.WKZZHD }}
+        WKZZURL: ${{ secrets.WKZZURL }}		
         
     steps:
       - name: Checkout
@@ -23,13 +23,13 @@ jobs:
         with:
           node-version: 12.x
       - name: npm install
-        if: env.wkzzhd
+        if: env.WKZZHD
         run: |
           cd ~/ziye
           git checkout feizao
           npm install
       - name: '运行 【微客众智】'
-        if: env.wkzzhd
+        if: env.WKZZHD
         run: |
           cd ~/ziye
           node wkzz.js
