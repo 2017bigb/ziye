@@ -1,6 +1,6 @@
 name:微客众智
 
-on:
+on：
   workflow_dispatch:
   schedule:
      - cron: '5,35 9-22 * * *'
