@@ -23,13 +23,13 @@ jobs:
         with:
           node-version: 12.x
       - name: npm install
-        if: env.fqkkhd
+        if: env.FQKK_HD
         run: |
           cd ~/ziye
           git checkout feizao
           npm install
       - name: '运行 【番茄看看】'
-        if: env.fqkkhd
+        if: env.FQKK_HD
         run: |
           cd ~/ziye
           node fqkk.js
