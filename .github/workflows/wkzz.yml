@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        wkzzhd: ${{ secrets.wkzzhd }}
-        wkzzurl: ${{ secrets.wkzzurl }}		
+        wkzzhd: ${{ secrets.WKZZHD }}
+        wkzzurl: ${{ secrets.WKZZURL }}		
         
     steps:
       - name: Checkout
