@@ -1,41 +1,41 @@
 name:微客众智
 
 on：
-  workflow_dispatch:
-  schedule:
-     - cron: '5,35 9-22 * * *'
-  watch:
-    types: started
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id
-    env:
-        wkzzurl: ${{ secrets.wkzzurl }}
-        wkzzhd: ${{ secrets.wkzzhd }}   
+  workflow_dispatch：
+  schedule：
+     - cron：'5,35 9-22 * * *'
+  watch：
+    types：started
+jobs：
+  build：
+    runs-on： ubuntu-latest
+    if： github.event.repository.owner.id == github.event.sender.id
+    env：
+        wkzzurl： ${{ secrets.wkzzurl }}
+        wkzzhd： ${{ secrets.wkzzhd }}   
       
-    steps:
-      - name: Checkout
-        run: |
+    steps：
+      - name：Checkout
+        run：|
           git clone https://github.com/2017bigb/ziye.git ~/ziye
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-      - name: npm install
-        if: env.wkzzhd
-        run: |
+      - name：Use Node.js 12.x
+        uses：actions/setup-node@v1
+        with：
+          node-version：12.x
+      - name：npm install
+        if：env.wkzzhd
+        run：|
           cd ~/ziye
           git checkout feizao
           npm install
-      - name: '运行 【番茄看看】'
-        if: env.wkzzhd
-        run: |
+      - name：'运行 【番茄看看】'
+        if：env.wkzzhd
+        run：|
           cd ~/ziye
           node wkzz.js
-        env:
+        env：
           
-          PUSH_KEY: ${{ secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-          TG_USER_ID: ${{ secrets.TG_USER_ID }}
+          PUSH_KEY：${{ secrets.PUSH_KEY }}
+          BARK_PUSH：${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN：${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID：${{ secrets.TG_USER_ID }}
