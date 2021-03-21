@@ -15,7 +15,7 @@ jobs：
         wkzzhd： ${{ secrets.wkzzhd }}   
       
     steps：
-      - name：Checkout
+      - name：Checkout 
         run：|
           git clone https://github.com/2017bigb/ziye.git ~/ziye
       - name：Use Node.js 12.x
